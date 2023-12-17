@@ -1,0 +1,456 @@
+* {
+    padding: 0;
+    margin: 0;
+    font-family: monospace;
+    box-sizing: border-box;
+}
+
+button a {
+    font-size: 44px;
+}
+
+.container-fluid {
+    width: 100%;
+}
+
+/* navbar */
+nav {
+    display: flex;
+    width: 100%;
+    height: 70px;
+    background: #5C4B99;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 2;
+}
+
+nav > div {
+    display: flex;
+    justify-content: space-between;
+}
+
+nav > div.container {
+    width: 992px;
+    margin: 0 auto;
+}
+
+nav > div label {
+    font-family: "Great Vibes", cursive;
+    font-size: 30px;
+    line-height: 70px;
+    padding: 0 30px;
+    color: #ffffff;
+}
+
+nav > div a {
+    display: inline-block;
+    font-size: 20px;
+    padding: 11px;
+    line-height: 48px;
+    color: #ffffff;
+    margin: 0 10px;
+    text-decoration: none;
+}
+
+#menu {
+    background-color: #5C4B99;
+    min-height: 55px;
+    min-width: 95px;
+    padding: 10px;
+    display: inline-block;
+    border-style: none;
+    color: white;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+#menu:hover {
+    font-weight: bolder;
+}
+
+#menu:focus {
+    font-weight: bolder;
+    cursor: pointer;
+}
+
+nav > div a:hover,
+.active {
+    font-weight: bolder;
+}
+
+nav > div a:focus {
+    font-weight: bolder;
+}
+
+.navbar a:last-child {
+    font-weight: bold;
+}
+
+/* Hamburger Icon Toggle */
+.menu-toggle {
+    display: none;
+    flex-direction: column;
+    height: 20px;
+    justify-content: space-between;
+    position: relative;
+    top: 10px;
+    right: 15px;
+}
+
+.menu-toggle span {
+    display: flex;
+    width: 28px;
+    height: 3px;
+    opacity: 1;
+    cursor: pointer;
+    background-color: #ffffff;
+}
+
+/* Animasi Menu Toggle */
+.menu-toggle span:nth-child(2) {
+    background: #fff;
+    transform-origin: 0 0;
+}
+
+.menu-toggle span:nth-child(4) {
+    background: #fff;
+    transform-origin: 0 100%;
+}
+
+.menu-toggle input:checked ~ span:nth-child(2) {
+    transform: rotate(45deg) translate(-1px, -1px);
+}
+
+.menu-toggle input:checked ~ span:nth-child(4) {
+    transform: rotate(-45deg) translate(-1px, -1px);
+}
+
+.menu-toggle input:checked ~ span:nth-child(3) {
+    transform: scale(0);
+    opacity: 0;
+}
+
+.jumbotron {
+    position: relative;
+    text-align: center;
+    width: 100%;
+    min-height: 75vh;
+    overflow: hidden;
+}
+
+.jumbotron img {
+    width: 100%;
+    height: auto;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.jumbotron-content {
+    position: absolute;
+    top: 55%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: #fff;
+    text-align: center;
+    text-shadow: 2px 2px 2px rgba(0, 0, 0, 1);
+}
+
+/* Responsif */
+@media (max-width: 847px) {
+    .jumbotron img {
+        width: auto;
+        height: 100%;
+    }
+}
+
+@media only screen and (max-width: 723px) {
+    .jumbotron img {
+        width: auto;
+        height: 100%;
+    }
+}
+
+.jumbotron h1 {
+    color: #fff;
+    font-size: 3em;
+    text-align: center;
+    padding: 200px 0 300px;
+    text-shadow: 2px 2px 2px rgba(0, 0, 0, 1);
+    z-index: 1;
+    position: relative;
+}
+
+.card-container {
+    display: grid;
+    margin: auto;
+    width: 90%;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 10px;
+}
+
+.card-container p {
+    margin-top: 10px;
+}
+
+.card {
+    margin-top: 30px;
+    margin-bottom: 30px;
+    background-color: whitesmoke;
+    border-radius: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+.button-2 {
+    margin-top: 10px;
+    border-radius: 8px;
+    border-width: 0;
+    color: #FFFFFF;
+    background-color: #5C4B99;
+    cursor: pointer;
+    display: inline-block;
+    font-size: 20px;
+    font-weight: lighter;
+    line-height: 30px;
+    list-style: none;
+    padding: 11px;
+    text-align: center;
+    transition: all 200ms;
+    vertical-align: baseline;
+    white-space: nowrap;
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+}
+
+.button-2:hover {
+    font-weight: bolder;
+}
+
+.card img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 20px 20px 0 0;
+}
+
+.card-content {
+    padding: 20px;
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+
+.skip-link {
+    position: absolute;
+    top: -40px;
+    left: 0;
+    background-color: #bf1722;
+    color: white;
+    padding: 8px;
+    z-index: 100;
+}
+
+.skip-link:focus {
+    top: 0;
+}
+
+a input {
+    min-width: 44px;
+    min-height: 44px;
+}
+
+@media screen and (max-width: 720px) {
+    .menu-toggle {
+        display: flex;
+    }
+
+    .card-container {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    nav .navbar {
+        display: flex;
+        position: absolute;
+        right: 0;
+        top: 0;
+        padding: 60px;
+        background: rgb(92, 75, 153);
+        flex-direction: column;
+        width: 70%;
+        height: 100vh;
+        align-items: center;
+        justify-content: space-evenly;
+        z-index: -1;
+        transform: translateX(100%);
+        transition: 0.3s;
+    }
+
+    nav .navbar .login {
+        background: transparent;
+        border: none;
+    }
+
+    nav .navbar.slide {
+        opacity: 0.9;
+        transform: translateX(0);
+    }
+}
+
+footer {
+    padding: 20px;
+    color: white;
+    background-color: #5C4B99;
+
+    text-align: center;
+    font-weight: bold;
+    margin-bottom: 0;
+}
+
+@media only screen and (max-width: 500px) {
+    .card-container{
+        grid-template-columns: 1fr;
+    }
+    .jumbotron {
+        background-image: url(../public/images/hero/hero-image_2-small-new.jpeg);
+    }
+}
+
+.container2 {
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: whitesmoke;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    border-radius: 20px;
+}
+
+.restaurant-image {
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px;
+
+}
+
+h1 {
+    font-size: 24px;
+}
+
+p {
+    font-size: 16px;
+}
+
+h2 {
+    font-size: 20px;
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+}
+
+li {
+    margin-bottom: 10px;
+}
+
+.menu-category {
+    margin-top: 20px;
+}
+
+.menu-category h3 {
+    font-size: 18px;
+    margin-bottom: 10px;
+    color: #5C4B99;
+}
+
+.menu-item {
+    border: 1px solid #ddd;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+.review {
+    border: 1px solid #ddd;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+form {
+    margin-top: 20px;
+}
+
+label {
+    font-size: 18px;
+    display: block;
+    margin-bottom: 5px;
+}
+
+input[type="text"],
+textarea {
+    width: 100%;
+    line-height: 20px;
+    padding: 15px;
+    border: 1px solid #ddd;
+    border-radius: 20px;
+    margin-bottom: 10px;
+    font-size: 16px;
+}
+
+input[type="submit"] {
+    background-color: #5C4B99;
+    color: #fff;
+    padding: 11px;
+    font-size: 20px;
+    line-height: 30px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+input[type="submit"]:hover {
+    background-color: #43257c;
+}
+
+.information-restaurant {
+    margin-top: 20px;
+    margin-bottom: 10px;
+}
+
+.p-resta{
+    margin-bottom: 7px;
+}
+
+.search-container {
+    margin-top: 15px;
+    margin-left: 50px;
+    margin-right: 50px;
+    display: grid;
+    grid-template-columns: 1fr auto;
+    gap: 10px;
+    justify-content: center;
+    align-items: center;
+}
+
+.search-input {
+    margin-top: 18px;
+}
+
+.search-button {
+    padding: 10px 20px;
+    background-color: #5C4B99;
+    font-size: 17px;
+    line-height: 30px;
+    color: #fff;
+    border: none;
+    border-radius: 15px;
+    cursor: pointer;
+}
+
+.search-button:hover {
+    background-color: #412483;
+}
+
+
+.detail-href {
+    padding: 12px 0 12px;
+}
